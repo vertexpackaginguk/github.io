@@ -1,39 +1,291 @@
-Act as a senior web developer and UI/UX designer. Build a complete, professional website exclusively for Vertex Packaging, a UK packaging manufacturer.
+```html
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Official website: https://vertexpackaging.co.uk/
+  <title>Vertex Packaging | UK Packaging Manufacturer</title>
+  <meta name="description" content="Discover Vertex Packaging, a UK packaging manufacturer offering bespoke printed boxes, custom e-commerce packaging, premium finishes and packaging solutions for businesses.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vertexpackaging.co.uk/">
 
-Brand colours:
-- Deep Green: #062F25
-- Gold: #C79B45
-- Light Grey: #E1E4E7
-- Warm ivory backgrounds for premium product sections
+  <meta property="og:title" content="Vertex Packaging | UK Packaging Manufacturer">
+  <meta property="og:description" content="Bespoke packaging solutions, custom printed boxes and professional packaging support for UK businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vertexpackaging.co.uk/">
 
-Brand positioning:
-Vertex Packaging is an in-house manufacturer of bespoke and custom printed packaging. Never describe the company as merely a reseller.
+  <meta name="theme-color" content="#062F25">
 
-Website requirements:
-- Build with HTML5, CSS3, and vanilla JavaScript.
-- Host on GitHub Pages for free.
-- Make the website responsive, accessible, fast-loading, and SEO-friendly.
-- Use professional packaging photography and elegant product layouts.
-- Do not invent certifications, customer testimonials, statistics, or manufacturing claims.
-- Use clean, functional navigation and clear quote enquiry calls to action.
+  <style>
+    :root {
+      --green: #062F25;
+      --gold: #C79B45;
+      --ivory: #FAF8F2;
+      --text: #26332E;
+      --muted: #65716B;
+      --white: #FFFFFF;
+    }
 
-Create these sections:
-1. Header with the Vertex Packaging brand name and navigation.
-2. Hero section explaining custom packaging manufacturing, with Get a Quote and Explore Products links.
-3. Product categories: custom mailer boxes, postal boxes, e-commerce packaging, shipping boxes, retail packaging, and bespoke printed boxes.
-4. Why Choose Vertex Packaging: in-house manufacturing, competitive prices, free design support, fast and free UK delivery, and premium finishing options.
-5. About Vertex Packaging.
-6. Packaging printing and finishing capabilities.
-7. Industries and business applications.
-8. Featured packaging products.
-9. Frequently asked questions.
-10. Contact and quote enquiry section.
-11. Footer with official website and contact details.
+    * { box-sizing: border-box; }
 
-Use British English throughout. Ensure internal links and buttons work. Link to the official website where appropriate, and do not invent product URLs or quote form endpoints.
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-Create index.html, style.css, script.js, and README.md. Inspect the repository before editing, preserve useful files, and explain how to publish the completed website with GitHub Pages.
+    a { color: var(--green); }
 
-This is a company website for Vertex Packaging only. Do not include a personal portfolio, personal CV, personal services, or personal branding.
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 22px 0;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .brand span { color: var(--gold); }
+
+    .hero {
+      padding: 78px 0 68px;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .eyebrow {
+      color: #8A6727;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 16px auto;
+      color: var(--green);
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.15;
+    }
+
+    h2 {
+      color: var(--green);
+      line-height: 1.3;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 18px auto;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 13px 25px;
+      border-radius: 5px;
+      background: var(--gold);
+      color: #17251E;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    section { padding: 54px 0; }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid #E7E5DD;
+      border-radius: 9px;
+    }
+
+    .card h3 { color: var(--green); }
+
+    .card p { color: var(--muted); }
+
+    .highlight {
+      background: #F0EBDD;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .cta h2 { color: var(--white); }
+
+    .cta p {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      background: #041F19;
+      color: #E1E4E7;
+      font-size: 14px;
+    }
+
+    footer a { color: #E6C783; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 55px 0; }
+      section { padding: 40px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a class="brand" href="https://vertexpackaging.co.uk/" aria-label="Vertex Packaging official website">
+        VERTEX <span>PACKAGING</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">UK Packaging Manufacturer</div>
+        <h1>Bespoke Packaging Solutions for Your Business</h1>
+        <p>
+          Vertex Packaging provides custom packaging solutions for businesses
+          looking to present, protect and deliver their products professionally.
+          Explore bespoke printed boxes, e-commerce packaging and premium
+          finishing options tailored to your requirements.
+        </p>
+        <a class="button" href="https://vertexpackaging.co.uk/">
+          Visit Vertex Packaging
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <h2>Custom Packaging Designed Around Your Brand</h2>
+          <p>
+            Packaging is an important part of the customer experience.
+            The right box can protect a product in transit, communicate brand
+            identity and create a professional presentation. Vertex Packaging
+            offers bespoke packaging options for businesses across different
+            industries.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Custom Printed Boxes</h3>
+            <p>
+              Explore bespoke printed packaging with branding and design
+              options suited to your product and customer experience.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>E-commerce Packaging</h3>
+            <p>
+              Discover packaging options for online retailers and brands
+              shipping products directly to their customers.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Postal and Mailer Boxes</h3>
+            <p>
+              Find packaging solutions for presenting and protecting products
+              during fulfilment, dispatch and delivery.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Premium Finishes</h3>
+            <p>
+              Consider finishing options that help create a distinctive,
+              professional look for branded packaging.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="container">
+        <h2>Packaging Support From Concept to Completion</h2>
+        <p>
+          Every business has different packaging needs. Box dimensions,
+          materials, print requirements and finishing choices can all influence
+          the final solution. Vertex Packaging offers free design support to
+          help customers explore suitable packaging options, alongside fast
+          and free UK delivery.
+        </p>
+        <p>
+          For product information, packaging specifications and quotation
+          enquiries, visit the official Vertex Packaging website.
+        </p>
+        <a href="https://vertexpackaging.co.uk/">
+          Explore packaging solutions from Vertex Packaging →
+        </a>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Looking for Custom Packaging?</h2>
+        <p>
+          Visit Vertex Packaging to learn more about bespoke boxes, custom
+          printed packaging and solutions for your business.
+        </p>
+        <a class="button" href="https://vertexpackaging.co.uk/">
+          Visit the Official Website
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year">2026</span> Vertex Packaging.
+        Visit our
+        <a href="https://vertexpackaging.co.uk/">official website</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
